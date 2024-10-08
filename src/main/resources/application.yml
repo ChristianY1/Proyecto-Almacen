@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: proyectosTest
+  datasource:
+    url: jdbc:mysql://localhost:3306/mi_base_de_datos
+    username: mi_usuario
+    password: pass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none  # Cambia a 'update' si quieres que actualice las tablas automáticamente
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true  # Mostrar consultas SQL en la consola
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialecto para MySQL 8
+  sql:
+    init:
+      mode: always  # Ejecutar scripts SQL al iniciar la aplicación
+
+# Configuración del servidor
+server:
+  port: 8080  # Cambia si necesitas un puerto diferente
+
+# Niveles de logging
+logging:
+  level:
+    root: INFO  # Cambia a DEBUG si necesitas logs más detallados
